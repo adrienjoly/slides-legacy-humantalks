@@ -3,6 +3,8 @@ marp: true
 theme: uncover
 ---
 
+<!-- proposal: https://gospeak.io/u/talks/code-legacy-les-cles-pour-s-en-sortir -->
+
 # **Code legacy 🧟**
 
 Les clés pour s'en sortir !
@@ -14,6 +16,21 @@ blockquote {
 }
 </style>
 
+<!--
+
+PLAN
+
+- Le code legacy (2mn)
+- Pistes et écueils typiques ⇒ clés: (3mn)
+- Étude de cas: (4mn)
+- Take-aways: (1mn)
+    - Devs ET entreprise ont **intérêt à maitriser** la complexité accidentelle de leur code
+    - **Prioriser les problèmes** en fonction des coûts & risques induits ET de la direction stratégique de l’entreprise
+    - **Convaincre** sur la base d’un **plan** avec objectifs mesurables
+    - Avancer **progressivement**, en rassurant les personnes impactées
+
+-->
+
 ---
 
 > "Legacy Code is **valuable** code you’re **afraid** to change"
@@ -24,148 +41,80 @@ Nicolas Carlo & Alex Bolboaca
 
 ---
 
-## Problèmes pour les dévs ?
+## **Symptomes** de code legacy
+
+* 👼 Devs *irremplaçables*
+
+* 😅 Délais et/ou craintes
+
+* 🫣 Recrutement difficile
+
+* 🥵 Bugs et regressions
 
 ---
 
-## Problèmes pour les dévs
+## Problèmes pour les **dévs**
 
-- Difficultés pour faire **évoluer** le projet:
-    - **complexité** accidentelle
-    - manque de **documentation**
-    - **stack** obsolète ou inconnue
+1. 😓 Rechignement
 
-- Bugs et régressions, trop tard
+2. 😤 Tensions
 
-- Peur de modifier le code 😨
+3. 🙈 Résignation
 
 ---
 
-## ...et pour l’entreprise ?
+## Problèmes pour l’**entreprise** 🏭
+
+- 📉 Perte de compétitivité
+
+- 👋 Churn
+
+- ⚰️ “bus factor” 
 
 ---
 
-## ...et pour l’entreprise
+## ❌ Refonte sans fin
 
-- attractivité et rétention des développeurs
-- bus factor
-- vélocité sur évolutions produit
-- robustesse produit
-- ⇒ risques & perte de compétitivité
+* ➡️ planification et accompagnement à prévoir
 
 ---
 
-Entrée en matière – 2/3
+## ❌ Pas le temps / pas le budget
 
-# **ReX: comment réussir/foirer son décommissionnement**
+* ➡️ risques et/ou coûts à présenter
 
 ---
 
-## **ReX: comment réussir/foirer son décommissionnement**
+## ❌ Refonte furtive
 
-- Benoît: décommissionnement d’une ancienne techno
-    <!-- ... qui s’est mal passé -->
+* ➡️ **confiance** à recréer entre équipes
 
-- Adrien: décommissionnement de cache chez Choose
-    <!--
-    réussi, grâce à:
-    - motivation forte de toute l’équipe de s’en débarrasser au plus vite
-    - scope réduit
-    - méthode progressive, avec accompagnement et outillage
-    -->
-
-- Fabien: emploi de DDD pour moderniser un legacy
-
-- Réécriture from scratch, une bonne idée ?
 <!--
-cf ["Rewriting Legacy Code" by Anna Filina (@afilina)](https://www.youtube.com/watch?v=bTuvjjtGipY):
-    - ça prend bcp bcp de temps
-    - deux codebase à maintenir en parallèle: celle en prod (legacy) et celle en cours d'écriture
-    - on risque de finir par répéter les mêmes erreurs dans la nouvelle codebase
-    - très difficile d'atteindre exactement les mêmes fonctionnalités => réécrire a du sens surtout si les besoins ont évolué (ce qui n'est pas notre cas)
-    - risque de créer un nouveau legacy !
+Raisons de ne pas le faire:
+- perte de confiance: PM et/ou direction
+- deux codebases à maintenir 🥵
+- risque de refonte avortée
+    - ex: codebase laissée dans un état encore pire
 -->
 
 ---
 
-Entrée en matière – 3/3
-
-# **Comment s’en sortir ?**
-
-<!-- Mesurer. Convaincre. Conduire le changement. -->
+📌 ÉTUDE DE CAS
 
 ---
 
-## Pré-requis
+## Problème
 
-* équipe alignée sur les **problèmes**
-    <!-- (symptômes) causés par la codebase legacy et leur cout, pour l’équipe de dev et pour l’entreprise -->
-
-* équipe **motivée** pour refondre/refacto le legacy
-
-* équipe alignée sur un **plan**:
-    - objectif
-    - stratégie
-    - tactique(s)
-    - engagement planifié pour chaque participant·e
-
-* **accord** des stakeholders
-
----
-
-## Sourcer **les bons problèmes**
-
-* **feedback** utilisateur et/ou stakeholders
-
-* tech **lead(s)**
-
-* "**freins**", "**peurs**" et "**hâtes**" remontées par devs 💫
-
-    - template d'atelier: [Hot Air Balloon | metroretro.io](https://metroretro.io/templates/the-hot-air-balloon-retrospective)
-
-* prendre en compte **roadmap** produit et/ou projets stratégiques de l’entreprise (ex: OKR)
-
----
-
-## Choisir **le bon périmètre**
-
-* Cf source des sujets les plus **couteux et/ou risqués**
-
-  - Complexity vs churn, cf [Hotspots analysis](https://understandlegacycode.com/blog/focus-refactoring-with-hotspots-analysis/#churn-vs-complexity--hotspots)
-
-* **fondations** pour fonctionnalités à venir (cf roadmap)
-
-* aller dans le sens de la **vision/stratégie** de l'entreprise
-
----
-
-## Définir **un bon plan de refonte**
-
-* **Veille techno**: archi, bonnes pratiques, frameworks...
-
-* **Objectif** clair et mesurable (DoD, OKR ou autre)
-    <!-- pour être mesure de savoir sans ambiguïté s’il est atteint, ou pas.-->
-
-* **PoC** sur solutions candidates, pour dé-risquer
-    <!-- pour évaluer leur faisabilité et compatibilité avec l’existant et pertinence sur le long terme-->
-
-* **Méthode** progressive pour éviter code freeze ?
-
----
-
-## ❌ Refonte en “sous-marin”
-
-Raisons de ne pas le faire:
-
-- perte de confiance: PM et/ou direction
-
-- deux codebases à maintenir 🥵
-
-- risque de refonte avortée
-
-    - ex: codebase laissée dans un état encore pire
-
----
+<!--
+- [problème] équipe tech a du mal à maitriser la complexité croissante du code produit ⇒ bugs, regressions et coût d’onboarding 🥵
+- [coordination] équipe produit veut internationaliser son app e-commerce, pour que les clients commandent depuis FR et USA 🌠
+- [priorisation] équipe tech prévient que le code sous-jacent est fragile ⇒ risque de bugs, regressions et/ou retards sur la livraison 💣
+- [plan] refonte du “checkout”, de manière à le rendre agnostique de la devise et des prestataires de livraison 🏗️
+    - ⇒ réécriture en DDD
+    - ⇒ suivi de progression: comptage d’évènement générés par version réécrite.
+    - ⇒ acceptation du projet de refonte par équipes et CTO
+- [réassurance] collaboration inter-équipe et livraison continue. 🤝
+-->
 
 ## Obtenir **l’accord et le budget**
 
