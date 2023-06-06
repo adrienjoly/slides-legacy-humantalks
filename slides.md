@@ -3,9 +3,9 @@ marp: true
 theme: uncover
 ---
 
-Journée à Thème
+# **Code legacy 🧟**
 
-# **ShoLegacy & Refactoring**
+Les clés pour s'en sortir !
 
 <style>
 blockquote {
@@ -16,65 +16,11 @@ blockquote {
 
 ---
 
-<style scoped>
-li strong {
-  display: block;
-  background-color: #eee;
-}
-</style>
-
-## **Programme de la journée**
-
-- 10h: Entrée en matière
-- 11h: Techniques de découplage
-- **12h: Déjeuner 🌮**
-- 13h30: Techniques de refonte / décommissionnement
-- 14h: Méthode d'analyse par l'historique git
-- **15h: Pause ☕️**
-- 15h30: Atelier pratique
-- **18h: Retro + apéro 🍻**
-
----
-
-## **Programme d'Entrée en matière**
-
-1. Code legacy: un atout couteux pour l’entreprise
-
-2. ReX: comment réussir/foirer son décommissionnement
-
-3. Comment s’en sortir ?
-
----
-
-> "**Legacy Code** is code without tests"
-
-Michael Feathers
-
-<!-- pas de tests => développement sans exemples et sans filet -->
-
----
-
-> "Legacy Code is **valuable** code you’re afraid to change"
+> "Legacy Code is **valuable** code you’re **afraid** to change"
 
 Nicolas Carlo & Alex Bolboaca
 
 <!-- notion de peur mais aussi de valeur pour l'entreprise -->
-
----
-
-> "A **code smell** is a surface indication that usually corresponds to a deeper problem in the system"
-
-(Martin Fowler)
-
----
-
-> "**Technical Debt** is the refactoring effort needed to add a feature non-invasively"
-
-Michael Feathers
-
----
-
-> "**Code refactoring** is the process of restructuring existing computer code without changing its external behavior"
 
 ---
 
@@ -259,118 +205,3 @@ Raisons de ne pas le faire:
 * Conseil: Mesurer → S'accorder → Proposer → Rassurer
 
 * Dé-risquer par PoC, baby steps et déploiment continu
-
----
-
-<!-- _class: invert -->
-
-DEUXIÈME PARTIE
-
-# Techniques de découplage
-
----
-
-TROISIÈME PARTIE
-
-# **Techniques de remédiation**
-
----
-
-## **Techniques de remédiation**
-
-1. Sans tests: Clean Code / Safe refactoring ✅
-
-    <!-- règles **clean code**, pour réduire la charge cognitive lors du refactoring et maintenance:[Summary of 'Clean code' by Robert C. Martin](https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29) -->
-
-    <!-- **safe refactoring**, pour améliorer la maintenabilité avant d’avoir des tests en place: ["Refactoring Legacy Code through Pure Functions" by Alex Bolboaca (@alexboly)](https://www.youtube.com/watch?v=ntUlHe_MGkg) -->
-
-2. Approval testing
-
-3. Scratch refactoring
-
-4. Mikado / Yak Shaving
-
-5. Sprout & Wrap
-
-6. Strangler fig pattern / Ship of Theseus
-
-7. Hotspot analysis
-
----
-
-## 2/ Approval testing 🪞
-
-![bg right](assets/approval-tests-cropped.jpg)
-
-Objectif: effets restent inchangés après chaque modification code.
-
-<!-- **approval tests**, une manière rapide et générale d’écrire des tests (provisoires) sur du code difficile à tester, pour prévenir les régressions pendant le refactoring de ce code: [Writing Automated Tests on a Legacy Node.js Back-End](https://www.infoq.com/articles/testing-legacy-nodejs-app/) -->
-
----
-
-## 3/ Scratch refactoring 🎨
-
-1. Expérimenter changements, sans filtre ni filet
-
-2. Écrire des tests
-
-3. Implémenter les changements, pour de vrai
-
-<!-- **scratch refactoring**: expérimenter des opérations de refactoring sans chercher à appliquer les changements. une fois l’approche trouvée, l’appliquer pour de vrai, en commençant par écrire des tests. cf [The key points of Working Effectively with Legacy Code](https://understandlegacycode.com/blog/key-points-of-working-effectively-with-legacy-code/) -->
-
----
-
-## 4/ Mikado 🧭 / Yak Shaving
-
-![bg right](assets/mikado-method-step3-nicolas-carlo.jpg)
-
-Principe: trouver le plus petit incrément d'amélioration, méthodiquement.
-
-<!-- méthode **mikado** (a.k.a. "Yak Shaving”): refactoring exploratoire s’appuyant sur un graphe qu’on met à jour sur papier, au fur et à mesure de l’avancement dans les tentatives réussies et ratées
-- [Use the Mikado Method to do safe changes in a complex codebase](https://understandlegacycode.com/blog/a-process-to-do-safe-changes-in-a-complex-codebase/)  
-- [The Mikado Method: A Great Help to Work With Legacy Code](https://improveandrepeat.com/2020/12/the-mikado-method-a-great-help-to-work-with-legacy-code/)
--->
-
----
-
-## 5/ Sprout & Wrap 🧑‍⚕️🧪
-
-- "sprout": réécrire + unit tester la fonction à refactoriser, avant de l’intégrer
-- "wrap": si nécessaire, appeler l’ancienne fonction depuis la nouvelle
-
-<!-- technique **Sprout & Wrap**, employable quand on a pas le temps de tester le legacy: [The key points of Working Effectively with Legacy Code](https://understandlegacycode.com/blog/key-points-of-working-effectively-with-legacy-code/) -->
-
----
-
-## 6/ Strangler fig pattern 🌴
-
-![](assets/strangler-microsoft.png)
-
-<!-- **Strangler fig pattern / Ship of Theseus**: changement progressif d’architecture, en routant (via une façade, ex: proxy HTTP) les requêtes entrantes vers le legacy ou le nouveau code, selon le cas: [Strangler Fig pattern - Azure Architecture Center](https://learn.microsoft.com/en-us/azure/architecture/patterns/strangler-fig) -->
-    
----
-
-## 7/ Hotspot analysis 🕵️‍♀️🐾
-
-Principe: repérer les zones de la codebase qui sont les plus complexes et les plus fréquemment modifiées
-
----
-
-## References
-
-<style scoped>
-img {
-  width: 90%;
-  margin: 0 auto;
-}
-</style>
-
-![](assets/books.jpg)
-
----
-
-<!-- _class: invert -->
-
-QUATRIÈME PARTIE
-
-# Méthode d'analyse par l'historique git
