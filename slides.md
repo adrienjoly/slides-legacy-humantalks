@@ -68,15 +68,7 @@ Nicolas Carlo & Alex Bolboaca
 
 ---
 
-## ❌ Refonte sans fin
-
-<style scoped>
-ul li {
-  list-style-type: "➡️ ";
-}
-</style>
-
-* **planification** et accompagnement à prévoir
+🛠️ REMEDIATION ?
 
 ---
 
@@ -109,6 +101,18 @@ Raisons de ne pas le faire:
 - risque de refonte avortée
     - ex: codebase laissée dans un état encore pire
 -->
+
+---
+
+## ❌ Refonte sans fin
+
+<style scoped>
+ul li {
+  list-style-type: "➡️ ";
+}
+</style>
+
+* **planification** et accompagnement à prévoir
 
 ---
 
