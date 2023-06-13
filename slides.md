@@ -38,13 +38,11 @@ Nicolas Carlo & Alex Bolboaca
 
 ## **Symptomes** de code legacy
 
-* 👼 Devs *irremplaçables*
-
-* 😅 Délais et/ou craintes
-
-* 🫣 Recrutement difficile
+* 🐌 Vélocité basse
 
 * 🥵 Bugs et regressions
+
+* 👼 Devs *irremplaçables*
 
 ---
 
@@ -112,7 +110,7 @@ ul li {
 }
 </style>
 
-* **Planification** et accompagnement à prévoir
+* **Planification** et/ou formation à prévoir
 
 ---
 
@@ -133,20 +131,18 @@ ul li {
 }
 </style>
 
-* Entreprise veut s'ouvrir aux USA
-* Complexité croissante du code
+* Site e-commerce veut s'ouvrir aux USA
+* Code devenu complexe et imprévisible
 * Dévs ont peur de tout casser
 
 ---
 
 ## 🔬 **Mesure** des coûts et risques
 
-Sur les 6 derniers mois:
-
-* Taille + complexité + qualité du code de "checkout"
-* Ratio bug/feature
-* Ratio retard/estimation
-* Nombre de régressions fonctionnelles
+* Qualité / santé du code de "checkout"
+* Nombre de bugs et regressions par nouvelle feature
+* Temps passé sur correctifs
+* → Calcul du coût réel par feature 💸
 
 ---
 
@@ -156,9 +152,8 @@ Sur les 6 derniers mois:
 
 * Prévenir **anomalies**: usage de *value objects* (DDD)
 * Explicitation **devises**: migration de base de données
-* **Suivi** des évènements traités par le code *legacy*
-* ... et ce, sans *code freeze*
-* **Comparer** le coût: refonte VS status quo
+* **Pas de code freeze**: tracking du code legacy/refondu
+* → **Comparer** le coût: refonte VS status quo 💸
 
 <!-- retirés par soucis de concision:
 3) **Livraisons**: délégation à une API SaaS externe
@@ -178,7 +173,7 @@ Sur les 6 derniers mois:
 
 ## 📈 **Suivi** et réassurance
 
-* Éviter **tunnel**: baby steps + déploiements réguliers
+* Éviter **tunnel**: PoC, baby steps, déploiements réguliers
 * Vérifier que tout changement peut être **annulé** en 1mn
 * **Cranter** la qualité à chaque amélioration
 * **Partager** l'avancement avec les personnes intéressées
