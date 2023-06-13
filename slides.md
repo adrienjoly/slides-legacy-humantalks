@@ -19,18 +19,11 @@ blockquote {
 </style>
 
 <!--
-
-PLAN
-
-- Le code legacy (2mn)
-- Pistes et écueils typiques ⇒ clés: (3mn)
-- Étude de cas: (4mn)
-- Take-aways: (1mn)
-    - Devs ET entreprise ont **intérêt à maitriser** la complexité accidentelle de leur code
-    - **Prioriser les problèmes** en fonction des coûts & risques induits ET de la direction stratégique de l’entreprise
-    - **Convaincre** sur la base d’un **plan** avec objectifs mesurables
-    - Avancer **progressivement**, en rassurant les personnes impactées
-
+PLAN:
+- Le code legacy: def, symptomes, problèmes (2mn)
+- Pistes et écueils typiques ⇒ clés (3mn)
+- Étude de cas (4mn)
+- Take-aways / à retenir (1mn)
 -->
 
 ---
@@ -77,19 +70,37 @@ Nicolas Carlo & Alex Bolboaca
 
 ## ❌ Refonte sans fin
 
-* ➡️ planification et accompagnement à prévoir
+<style scoped>
+ul li {
+  list-style-type: "➡️ ";
+}
+</style>
+
+* **planification** et accompagnement à prévoir
 
 ---
 
 ## ❌ Pas le temps / pas le budget
 
-* ➡️ risques et/ou coûts à présenter
+<style scoped>
+ul li {
+  list-style-type: "➡️ ";
+}
+</style>
+
+* **risques et/ou coûts** à présenter
 
 ---
 
-## ❌ Refonte furtive
+## ❌ Refonte en sous-marin
 
-* ➡️ **confiance** à recréer entre équipes
+<style scoped>
+ul li {
+  list-style-type: "➡️ ";
+}
+</style>
+
+* **confiance** à recréer entre équipes
 
 <!--
 Raisons de ne pas le faire:
@@ -105,45 +116,70 @@ Raisons de ne pas le faire:
 
 ---
 
-## Problème
+## **Situation**
 
-<!--
-- [problème] équipe tech a du mal à maitriser la complexité croissante du code produit ⇒ bugs, regressions et coût d’onboarding 🥵
-- [coordination] équipe produit veut internationaliser son app e-commerce, pour que les clients commandent depuis FR et USA 🌠
-- [priorisation] équipe tech prévient que le code sous-jacent est fragile ⇒ risque de bugs, regressions et/ou retards sur la livraison 💣
-- [plan] refonte du “checkout”, de manière à le rendre agnostique de la devise et des prestataires de livraison 🏗️
-    - ⇒ réécriture en DDD
-    - ⇒ suivi de progression: comptage d’évènement générés par version réécrite.
-    - ⇒ acceptation du projet de refonte par équipes et CTO
-- [réassurance] collaboration inter-équipe et livraison continue. 🤝
--->
+<style scoped>
+@counter-style problem-bullets {
+  system: cyclic;
+  symbols: "✈️""🏭""🥵";
+  suffix: " ";
+}
+ul li {
+  list-style-type: problem-bullets;
+}
+</style>
 
-## Obtenir **l’accord et le budget**
-
-1. **Mesurer** / estimer couts et risques liés au problème(s)
-
-2. **S'accorder** avec PO/PM sur priorité problème(s)
-
-3. **Proposer** problème(s) et plan aux stakeholders
-
-    - convaincre avec des chiffres (cf mesures)
-    - estimer puis comparer le cout: refonte vs status quo
-
-4. **Rassurer** tout au long de refonte/décommissionnement
+* Entreprise veut s'ouvrir aux USA
+* Complexité croissante du code
+* Dévs ont peur de tout casser
 
 ---
 
-## Avant et pendant **la refonte**
+## 🔬 **Mesure** des coûts et risques
 
-* Mesurer l'impact tout au long de la refonte
-    <!-- pour voir la progression, motiver l’équipe et rassurer les stakeholders (notamment pour qu’ils accordent à nouveau du budget pour de prochains chantiers de refonte) -->
+Sur les 6 derniers mois:
 
-* Bosser à plusieurs, pour alignement et apprentissages
+* Taille + complexité + qualité du code de "checkout"
+* Ratio bug/feature
+* Ratio retard/estimation
+* Nombre de régressions fonctionnelles
 
-* Déployer à chaque (petite) étape, pour rester en contrôle
+---
 
-* Cranter les améliorations, pour pérenniser améliorations
-    <!-- ex: activer un flag “strict” dès que possible, pour assurer que le nouveau code soit plus quali que l’ancien -->
+## 🧭 **Proposition** d'un plan
+
+**Périmètre** d'intervention initial: code de "checkout"
+
+* Prévenir **anomalies**: usage de *value objects* (DDD)
+* Explicitation **devises**: migration de base de données
+* **Suivi** des évènements traités par le code *legacy*
+* ... et ce, sans *code freeze*
+* **Comparer** le coût: refonte VS status quo
+
+<!-- retirés par soucis de concision:
+3) **Livraisons**: délégation à une API SaaS externe
+4) **Cohérence** données: retrait d'un cache interne
+-->
+
+---
+
+## 🤝 **Coordination** avec collègues
+
+* Informer l'**équipe produit** des coûts et risques actuels
+* **Présenter** le plan de refonte
+* Négocier sur **planification** des chantiers
+* Obtenir l'**accord** de la direction
+
+---
+
+## 📈 **Suivi** et réassurance
+
+* Éviter **tunnel**: baby steps + déploiements réguliers
+* Vérifier que tout changement peut être **annulé** en 1mn
+* **Cranter** la qualité à chaque amélioration
+* **Partager** l'avancement avec les personnes intéressées
+* Coordination: **négocier** ajustements si nécessaire
+* Être transparent sur risques. **Célébrer** les victoires !
 
 ---
 
@@ -155,7 +191,29 @@ Raisons de ne pas le faire:
   symbols: "💸""🛑""🤝""😌";
   suffix: " ";
 }
+ul li {
+  list-style-type: emoji-bullets;
+}
+</style>
 
+* Legacy = **coûts** + **risques** → entreprise
+
+* Réécriture from scratch = **danger**
+
+* Mesurer → Proposer → Accorder → Rassurer
+
+* Dé-risquer: PoC, baby steps, déploiment continu
+
+---
+
+## 🍱 **À retenir**
+
+<style scoped>
+@counter-style emoji-bullets {
+  system: cyclic;
+  symbols: "💸""🛑""🤝""😌";
+  suffix: " ";
+}
 ul li {
   list-style-type: emoji-bullets;
 }
@@ -163,10 +221,18 @@ ul li {
 
 ![bg right](assets/final-slide.png)
 
-* Legacy = **coûts** + **risques** → entreprise
+- Legacy = **coûts** + **risques** → entreprise
 
-* Réécriture from scratch = **danger**
+- Réécriture from scratch = **danger**
 
-* Mesurer → Accorder → Proposer → Rassurer
+- Mesurer → Proposer → Accorder → Rassurer
 
-* Dé-risquer: PoC, baby steps, déploiment continu
+- Dé-risquer: PoC, baby steps, déploiment continu
+
+<!--
+Take-aways: (1mn)
+- Devs ET entreprise ont **intérêt à maitriser** la complexité accidentelle de leur code
+- **Prioriser les problèmes** en fonction des coûts & risques induits ET de la direction stratégique de l’entreprise
+- **Convaincre** sur la base d’un **plan** avec objectifs mesurables
+- Avancer **progressivement**, en rassurant les personnes impactées
+-->
