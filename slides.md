@@ -7,6 +7,8 @@ theme: uncover
 
 # **Code legacy 🧟**
 
+![bg](assets/background.png)
+
 Les clés pour s'en sortir !
 
 <style>
@@ -147,10 +149,24 @@ Raisons de ne pas le faire:
 
 ## 🍱 **À retenir**
 
-* Legacy: atout, couts et risques pour devs ET entreprise
+<style scoped>
+@counter-style emoji-bullets {
+  system: cyclic;
+  symbols: "💸""🛑""🤝""😌";
+  suffix: " ";
+}
 
-* Réécriture from scratch: rarement une bonne idée
+ul li {
+  list-style-type: emoji-bullets;
+}
+</style>
 
-* Conseil: Mesurer → S'accorder → Proposer → Rassurer
+![bg right](assets/final-slide.png)
 
-* Dé-risquer par PoC, baby steps et déploiment continu
+* Legacy = **coûts** + **risques** → entreprise
+
+* Réécriture from scratch = **danger**
+
+* Mesurer → Accorder → Proposer → Rassurer
+
+* Dé-risquer: PoC, baby steps, déploiment continu
