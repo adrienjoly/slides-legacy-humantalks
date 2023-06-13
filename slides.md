@@ -80,7 +80,7 @@ ul li {
 }
 </style>
 
-* **risques et/ou coûts** à présenter
+* **Risques et/ou coûts** à présenter
 
 ---
 
@@ -92,7 +92,7 @@ ul li {
 }
 </style>
 
-* **confiance** à recréer entre équipes
+* **Confiance** à recréer entre équipes
 
 <!--
 Raisons de ne pas le faire:
@@ -112,7 +112,7 @@ ul li {
 }
 </style>
 
-* **planification** et accompagnement à prévoir
+* **Planification** et accompagnement à prévoir
 
 ---
 
