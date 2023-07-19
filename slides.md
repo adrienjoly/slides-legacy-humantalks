@@ -173,12 +173,12 @@ ul li {
 
 ## 📈 **Suivi** et réassurance
 
+* **Partager** l'avancement avec les personnes intéressées
 * Éviter **tunnel**: PoC, baby steps, déploiements réguliers
 * Vérifier que tout changement peut être **annulé** en 1mn
 * **Cranter** la qualité à chaque amélioration
-* **Partager** l'avancement avec les personnes intéressées
-* Coordination: **négocier** ajustements si nécessaire
-* Être transparent sur risques. **Célébrer** les victoires !
+* Prévenir risques: **négocier** ajustements si nécessaire
+* **Célébrer** les victoires !
 
 ---
 
@@ -199,7 +199,7 @@ ul li {
 
 * Réécriture from scratch = **danger**
 
-* Mesurer → Proposer → Accorder → Rassurer
+* Mesurer → Planifier → Accorder → Rassurer
 
 * Dé-risquer: PoC, baby steps, déploiment continu
 
@@ -224,7 +224,7 @@ ul li {
 
 - Réécriture from scratch = **danger**
 
-- Mesurer → Proposer → Accorder → Rassurer
+- Mesurer → Planifier → Accorder → Rassurer
 
 - Dé-risquer: PoC, baby steps, déploiment continu
 
